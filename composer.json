@@ -6,5 +6,10 @@
             "email": "jiri.jezek78@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "siil78\\phpmvc": "."
+        }
+    }
 }

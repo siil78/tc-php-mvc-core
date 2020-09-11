@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core;
+namespace siil78\phpmvc;
 
-use app\core\middlewares\BaseMiddleware;
+use siil78\phpmvc\middlewares\BaseMiddleware;
 
 /**
  * Třída pro zjednodušení přístupu k vykreslení view

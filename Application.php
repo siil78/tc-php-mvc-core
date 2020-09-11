@@ -1,9 +1,9 @@
 <?php
 
-namespace app\core;
+namespace siil78\phpmvc;
 
-use app\core\db\Database;
-use app\core\db\DbModel;
+use siil78\phpmvc\db\Database;
+use siil78\phpmvc\db\DbModel;
 
 class Application {
 

@@ -1,9 +1,9 @@
 <?php   
 
-namespace app\core\db;
+namespace siil78\phpmvc\db;
 
-use app\core\Model;
-use app\core\Application;
+use siil78\phpmvc\Model;
+use siil78\phpmvc\Application;
 
 /**
  * Abstraktní třída definuje komunikaci modelu s databází

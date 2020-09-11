@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core\exception;
+namespace siil78\phpmvc\exception;
 
 
 /**

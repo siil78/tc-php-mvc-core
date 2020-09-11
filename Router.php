@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core;
+namespace siil78\phpmvc;
 
-use app\core\exception\NotFoundException;
+use siil78\phpmvc\exception\NotFoundException;
 
 class Router {
 
@@ -53,7 +53,7 @@ class Router {
         //protože callback je uložen jako string, musíme ho převést na objekt, aby jsme na něm mohli volat metody
         if (is_array($callback)) {
             //Do vlastnosti třídy Application ulož hodnotu volaného controlleru       
-            /**@var \app\core\Controller $controller */  
+            /**@var \siil78\phpmvc\Controller $controller */  
             $controller = new $callback[0]();
             Application::$app->controller = $controller; 
             //ulož hodnotu volané akce kontroleru
