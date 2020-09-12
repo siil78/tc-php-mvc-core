@@ -23,7 +23,7 @@ class Application {
     //? může být typu DbModel, ale i např. null
     public ?UserModel $user;
     //protože třídy z core by neměli používat třídy mimo core, userClass jsme definovali v $config v index.php
-    public string $userClass;
+    public ?string $userClass;
     //výchozí hodnota pro layout
     public string $layout = 'main';
     //třída pro tvorbu view. nastaví hlavičky html (title, meta...) a definuje všechny metody ohledně view.
