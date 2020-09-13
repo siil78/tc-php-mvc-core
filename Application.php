@@ -7,6 +7,11 @@ use siil78\phpmvc\db\DbModel;
 
 class Application {
 
+    const EVENT_BEFORE_REQUEST = 'beforeRequest';
+    const EVENT_AFTER_REQUEST = 'afterRequest';
+
+    protected array $eventListeners = [];
+
     public static string $ROOT_DIR;
     //ukázka použití typovaných vlastností třídy
     //proměnná router je typu Router
@@ -70,6 +75,8 @@ class Application {
      * @return void
      */
     public function run() {
+        //zavolej event
+        $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
         //zavoláme metodu resolve
         try {
             echo $this->router->resolve();
@@ -113,5 +120,32 @@ class Application {
     public static function isGuest()
     {
         return !self::$app->user;
+    }
+
+    /**
+     * Metoda registruje událost a k ní callback
+     *
+     * @param string $eventName
+     * @param function $callback
+     * @return void
+     */
+    public function on($eventName, $callback)
+    {
+        $this->eventListeners[$eventName][] = $callback;
+    }
+
+    /**
+     * Volání funkce přiřazené určité události. 
+     *
+     * @param string $eventName
+     * @return void
+     */
+    public function triggerEvent($eventName) 
+    {
+        $callbacks = $this->eventListeners[$eventName] ?? [];
+
+        foreach ($callbacks as $callback) {
+            call_user_func($callback);
+        }
     }
 }
